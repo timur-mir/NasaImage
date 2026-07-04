@@ -15,7 +15,6 @@ class NasaImage {
     required this.url,
   });
 
-  /// Преобразует объект в JSON‑карту (для сохранения в кэш)
   Map<String, dynamic> toJson() {
     return {
       'date': date,
@@ -26,9 +25,9 @@ class NasaImage {
     };
   }
 
-  /// Создаёт объект из JSON‑карты (для восстановления из кэша)
+
   factory NasaImage.fromJson(Map<String, dynamic> json) {
-    // Валидация и обработка возможных null
+
     return NasaImage(
       date: json['date']?.toString() ?? 'Unknown date',
       explanation: json['explanation']?.toString() ?? 'No explanation available',
@@ -38,7 +37,7 @@ class NasaImage {
     );
   }
 
-  /// Опционально: метод для отладки (вывод в консоль)
+ 
   @override
   String toString() {
     return 'NasaImage(date: $date, title: $title, url: $url)';
